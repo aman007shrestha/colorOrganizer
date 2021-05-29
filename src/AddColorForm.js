@@ -1,23 +1,36 @@
-import React, { useRef } from "react";
+import React, { useState } from "react";
 
 
 export default function AddColorForm({ onNewColor = f => f }){
-	const txtTitle = useRef();
-	const hexColor = useRef();
+	const [title, setTitle] = useState("");
+	const [color, setColor] = useState("#000000");
+	//const txtTitle = useRef();
+	//const hexColor = useRef();
 	const submit = e => {
 		e.preventDefault();
-		const title = txtTitle.current.value;
-		const color = hexColor.current.value;
+		//const title = txtTitle.current.value;
+		//const color = hexColor.current.value;
 		onNewColor(title, color);
 		console.log(title, color)
-		txtTitle.current.value = "";
-		hexColor.current.value="";
+		setTitle("")
+		setColor("#000000")
+		//txtTitle.current.value = "";
+		//hexColor.current.value="";
 		
 	}
 	return (
 		<form onSubmit={submit}>
-			<input ref={txtTitle} type="text" placeholder="color title..." required />
-			<input ref={hexColor} type="color" required />
+			<input 
+			value={title} 
+			type="text" 
+			placeholder="color title..." 
+			onChange={event => setTitle(event.target.value)}
+			required />
+			<input 
+			value={color} 
+			type="color" 
+			onChange={event => setColor(event.target.value)}
+			required />
 			<button>Add</button>
 		</form>
 	);
