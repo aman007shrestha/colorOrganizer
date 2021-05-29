@@ -4,6 +4,7 @@ import colorData from "./color-data.json";
 import './App.css';
 import ColorList from "./ColorList.js";
 import AddColorForm from "./AddColorForm";
+import { v4 } from "uuid";
 
 function App() {
   console.log(colorData);
@@ -12,7 +13,22 @@ function App() {
   console.log(colors);
   return (
   <>
-    <AddColorForm />
+    <AddColorForm 
+      onNewColor={
+        (title, color) => {
+          const newColors = [
+            ...colors, 
+            {
+              id: v4(),
+              rating: 0,
+              title,
+              color
+            }
+          ];
+          setColors(newColors);
+        }
+      }
+    />
 
     <ColorList 
       colors={colors}
@@ -21,7 +37,12 @@ function App() {
           const newColors = colors.map(color =>
             color.id === id ? {...color, rating} : color
           );
+          console.log("nnnn");
+          console.log(newColors);
           setColors(newColors)
+          console.log("yy")
+          console.log(newColors);
+          console.log("JJ")
         }
       }
       onRemoveColor = { id => {
