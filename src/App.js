@@ -1,25 +1,29 @@
-import logo from './logo.svg';
+
+import React, { useState } from "react";
+import colorData from "./color-data.json";
 import './App.css';
+import ColorList from "./ColorList.js";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  console.log(colorData);
+  const [colors, setColors] = useState(colorData);
+  console.log("Colors");
+  console.log(colors);
+  return <ColorList 
+    colors={colors}
+    onRateColor = {
+      (id, rating) => {
+        const newColors = colors.map(color =>
+          color.id === id ? {...color, rating} : color
+        );
+        setColors(newColors)
+      }
+    }
+    onRemoveColor = { id => {
+      const newColors = colors.filter(color => color.id !== id);
+      setColors(newColors);
+    }} 
+  />
 }
 
 export default App;
