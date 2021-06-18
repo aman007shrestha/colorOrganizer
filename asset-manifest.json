@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/colorOrganizer/static/css/main.8c8b27cf.chunk.css",
+    "main.js": "/colorOrganizer/static/js/main.543e4937.chunk.js",
+    "main.js.map": "/colorOrganizer/static/js/main.543e4937.chunk.js.map",
+    "runtime-main.js": "/colorOrganizer/static/js/runtime-main.e70862fa.js",
+    "runtime-main.js.map": "/colorOrganizer/static/js/runtime-main.e70862fa.js.map",
+    "static/js/2.eba758a2.chunk.js": "/colorOrganizer/static/js/2.eba758a2.chunk.js",
+    "static/js/2.eba758a2.chunk.js.map": "/colorOrganizer/static/js/2.eba758a2.chunk.js.map",
+    "static/js/3.07e8e47a.chunk.js": "/colorOrganizer/static/js/3.07e8e47a.chunk.js",
+    "static/js/3.07e8e47a.chunk.js.map": "/colorOrganizer/static/js/3.07e8e47a.chunk.js.map",
+    "index.html": "/colorOrganizer/index.html",
+    "static/css/main.8c8b27cf.chunk.css.map": "/colorOrganizer/static/css/main.8c8b27cf.chunk.css.map",
+    "static/js/2.eba758a2.chunk.js.LICENSE.txt": "/colorOrganizer/static/js/2.eba758a2.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e70862fa.js",
+    "static/js/2.eba758a2.chunk.js",
+    "static/css/main.8c8b27cf.chunk.css",
+    "static/js/main.543e4937.chunk.js"
+  ]
+}
